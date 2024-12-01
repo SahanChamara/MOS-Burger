@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOS Burger System</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="container">
+        <header>
+            <p class="logo">MOS BURGER LOGO</p>
+            <i class='bx bx-menu' id="mIcon"></i>
+            <nav>
+                <ul class="nav_links">
+                    <li class="nav_li"><a class="navigate_active" href="#home">Home</a></li>
+                    <li class="nav_li"><a class="navigate" href="#menu">Menu</a></li>
+                    <li class="nav_li"><a class="navigate" href="#contactUs">Contact Us</a></li>
+                    <li class="nav_li"><a class="navigate" href="#about">About</a></li>
+                </ul>
+            </nav>
+            <a class="navigate" href="signup"><button class="btnsignUp">Sign Up</button></a>
+        </header>
+
+        <section class="home" id="home">
+            <div class="mainHead">
+                <img src="Images/home image.jpg" class="home_image" alt="">
+                <div class="title1">
+                    <h1>The only</h1>
+                    <h1>Burger Place</h1>
+                    <h1>You'll Love</h1>                    
+                    <h6 class="subtitle">Healthy Burger With Low Calaries</h6>
+                    <a href="order"><button class="btnOrder">Order Now</button></a>
+                </div>       
+            </div>
+            <div>
+                <!-- <a href="order"><button class="btnOrder">Sign Up</button></a> -->
+            </div>
+
+        </section>
+
+    </div>
+
 
 
 
@@ -15,4 +51,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
