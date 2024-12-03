@@ -1,4 +1,4 @@
-//toggle icon
+// //toggle icon
 // let menuIcon = document.querySelector('#mIcon');
 // let navBar = document.querySelector('.nav_links');
 
@@ -7,7 +7,7 @@
 //     navBar.classList.toggle('navigate_active');
 // };
 
-// Scroll sections active
+// // Scroll sections active
 // let sections = document.querySelectorAll('section');
 // let navLinks = document.querySelectorAll('header nav_links a');
 
@@ -25,24 +25,28 @@
 //             });
 //         };
 //     });
-// remove toggle icon and navbar when click nav bar link
+// // remove toggle icon and navbar when click nav bar link
 // menuIcon.classList.remove('bx-x');
 // navBar.classList.remove('navigate_active');
-//};
+// };
 
 
 // login verifying
-let cusLoginArr = [
+let cachier = [
     {
-        userName: "sahan",
-        password: "123"
+        userName : "cashier1",
+        password : "ca123"
     },
     {
-        userName: "kasun",
-        password: "456"
+        userName : "cashier2",
+        password : "ca456"
     }
 ];
-console.log(cusLoginArr);
+
+let admin = {
+    userName : "admin",
+    password : "admin123"
+};
 
 
 function signIn() {
@@ -51,17 +55,17 @@ function signIn() {
 
     let isExist = false;
 
-    for (let i = 0; i < cusLoginArr.length; i++) {
-        if(userName==cusLoginArr[i].userName && password==cusLoginArr[i].password){
-            alert('ok') 
-            isExist=true;          
+    for (let i = 0; i < cachier.length; i++) {
+        if(userName==cachier[i].userName && password==cachier[i].password){           
+            isExist=true;
+            window.location.assign("home.html")          
         }
     }
     if(!isExist){        
         Swal.fire({
             icon: "error",
             title: "Oops...",
-            text: "You Don't have an acoount...Please Register"
+            text: "Wrong User Name or Password..."
             // footer: '<a href="#">Why do I have this issue?</a>'
           });
     }

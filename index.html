@@ -1,55 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOS Burger System</title>
+    <title>Log in</title>
+    <link rel="stylesheet" href="login.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css">    
+    <!-- <link rel="stylesheet" href="sweetalert2.min.css"> -->
+
 </head>
-
 <body>
-    <div class="container">
-        <header>
-            <p class="logo">MOS BURGER LOGO</p>
-            <i class='bx bx-menu' id="mIcon"></i>
-            <nav>
-                <ul class="nav_links">
-                    <li class="nav_li"><a class="navigate_active" href="#home">Home</a></li>
-                    <li class="nav_li"><a class="navigate" href="#menu">Menu</a></li>
-                    <li class="nav_li"><a class="navigate" href="#contactUs">Contact Us</a></li>
-                    <li class="nav_li"><a class="navigate" href="#about">About</a></li>
-                </ul>
-            </nav>
-            <a class="navigate" href="login.html"><button class="btnsignUp">Log in</button></a>
-        </header>
-
-        <section class="home" id="home">
-            <div class="mainHead">
-                <img src="Images/home image.jpg" class="home_image" alt="">
-                <div class="title1">
-                    <h1>The only</h1>
-                    <h1>Burger Place</h1>
-                    <h1>You'll Love</h1>                    
-                    <h6 class="subtitle">Healthy Burger With Low Calaries</h6>
-                    <!-- <a href="order"><button class="btnOrder">Order Now</button></a> -->
-                </div>       
+    <!-- Login -->
+     <div class="loginbox">
+        <form action="">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" placeholder="User Name" id="userName">
+                <i class='bx bxs-user'></i>
             </div>
-            <div>
-                
+            <div class="input-box">
+                <input type="password" placeholder="Password" id="pass">
+                <i class='bx bxs-lock-alt'></i>
             </div>
+            <!-- <div class="forget">
+                <a href="">Forget Password</a>
+            </div> -->
 
-        </section>
+            <input type="button" class="btnSignin" value="Sign in" onclick="signIn()">
 
-    </div>
+            <!-- <div class="register-link">
+                <p class="continue">Or Continue With</p>
+                <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fwww.google.co.uk%2F&ec=GAZAmgQ&hl=en&ifkv=AcMMx-ckUEfGAYiEjfj0w4Vo0oKISI_u5LMELYYvH0Go6w2dW4GUqg-9e2FLhopiAZ-_kz-5E_wE6A&passive=true&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-987878158%3A1733218830708512&ddm=1"><img class="googleImage" src="Images/google.png" alt=""></a>
+                <a href="https://web.facebook.com/?_rdc=1&_rdr"><img class="googleImage" src="Images/facebook.png" alt=""></a>
+                <p>Don't have an account? <a class="" href="signup.html"><input type="button" value="Join Now" class="btnJoin"></a></p>
+            </div> -->
+        </form>        
+     </div>
 
-
-
-
-
-
-    <!-- <script src="script.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+     <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,134 +1,135 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto+Slab:wght@100..900&display=swap');
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color: #1D1E1A;    
+body {
+  background-color: #1D1E1A;
 }
 
 .container {
-    max-width: 1536px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-  }
-
-#mIcon{
-    font-size: 2rem;
-    color: white;
-    display: none;
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
-.nav_li{
-    font-family: Roboto Slab;
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
+#mIcon {
+  font-size: 2rem;
+  color: white;
+  display: none;
 }
 
-.navigate{
-    font-family: Roboto Slab;
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
-    margin: 0.5rem;
+.nav_li {
+  font-family: Roboto Slab;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
 }
 
-.navigate_active{
-    font-family: Roboto Slab;
-    font-weight: 500;
-    font-size: 1rem;
-    color: white;
-    text-decoration: none;
-    margin: 0.5rem;
+.navigate {
+  font-family: Roboto Slab;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
+}
+
+.navigate_active {
+  font-family: Roboto Slab;
+  font-weight: 500;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  margin: 0.5rem;
 
 }
 
-header{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 1rem 5%;
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem 5%;
 }
 
-.nav_links{
-    list-style: none;    
+.nav_links {
+  list-style: none;
 }
 
-.nav_links li{
-    display: inline-block;
-    pad: 0rem 1rem;
+.nav_links li {
+  display: inline-block;
+  pad: 0rem 1rem;
 }
 
-.nav_links li a{
-    transition: all 0.3s ease-in-out;
-}
-.nav_links li a:hover{
-    color: #16B916;
+.nav_links li a {
+  transition: all 0.3s ease-in-out;
 }
 
-.logo{
-    color: white;
-    margin-right: auto;
+.nav_links li a:hover {
+  color: #16B916;
 }
 
-.btnsignUp{
-    background-color: #16B916;
-    color: white;
-    font-weight: 800;    
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 1rem;
-    cursor: pointer;
-    transition: all 0.2s ease-in;
+.logo {
+  color: white;
+  margin-right: auto;
 }
 
-.btnsignUp:hover{
-    background-color: black;    
-    color: white;
+.btnsignUp {
+  background-color: #16B916;
+  color: white;
+  font-weight: 800;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
 }
 
-.home{
+.btnsignUp:hover {
+  background-color: black;
+  color: white;
+}
+
+.home {
   padding-left: 2rem;
 }
 
 /* image styling */
-.home_image{
-    border-top-right-radius: 10rem;
-    border-top-left-radius: 2rem;
-    border-bottom-left-radius: 2rem;
-    border-bottom-right-radius: 2rem;
-    width: 30.5rem;
-    height: 38rem;
+.home_image {
+  border-top-right-radius: 10rem;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  border-bottom-right-radius: 2rem;
+  width: 30.5rem;
+  height: 38rem;
 }
 
-.mainHead{
-  display: flex;  
+.mainHead {
+  display: flex;
 }
 
-.title1{
+.title1 {
   color: white;
   margin-top: 7rem;
   margin-left: 5rem;
   font-weight: 400;
   font-size: 3rem;
-  font-family: krona One,sans-serif;
+  font-family: krona One, sans-serif;
   line-height: 7rem;
 }
 
-.subtitle{
+.subtitle {
   font-size: 1rem;
   letter-spacing: 0.3rem;
-  font-family: krona One,sans-serif;
+  font-family: krona One, sans-serif;
   color: yellow;
 }
 
@@ -145,7 +146,99 @@ header{
   color: white;
 } */
 
+.btnOptionDiv{
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
 
+.btnoptions {
+  left: 10rem;
+  top: 10rem;  
+  border: none;
+  padding: 10px 150px;
+  font-size: 2rem;
+  position: relative;
+  background: transparent;
+  color: #ffa500;
+  /* text-transform: uppercase; */
+  border: 3px solid #ffa500;
+  cursor: pointer;
+  transition: all 0.7s;
+  overflow: hidden;
+  border-radius: 100px; 
+  display: block;  
+  margin: 0.2rem auto;  
+
+}
+
+.btnoptions:hover {
+  color: #000;
+}
+span {
+  transition: all 0.7s;
+  z-index: -1;
+}
+
+.btnoptions .first {
+  content: "";
+  position: absolute;
+  right: 100%;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  background: #ffa500;
+}
+
+.btnoptions:hover .first {
+  top: 0;
+  right: 0;
+}
+.btnoptions .second {
+  content: "";
+  position: absolute;
+  left: 25%;
+  top: -100%;
+  height: 100%;
+  width: 25%;
+  background: #ffa500;
+}
+
+button:hover .second {
+  top: 0;
+  left: 50%;
+}
+
+.btnoptions .third {
+  content: "";
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  top: 100%;
+  width: 25%;
+  background: #ffa500;
+}
+
+.btnoptions:hover .third {
+  top: 0;
+  left: 25%;
+}
+
+.btnoptions .fourth {
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  height: 100%;
+  width: 25%;
+  background: #ffa500;
+}
+
+.btnoptions:hover .fourth {
+  top: 0;
+  left: 0;
+}
 
 
 
@@ -185,100 +278,100 @@ header{
 /* Responsives */
 /* 2xl */
 @media (max-width: 1536px) {
-    .container {
-      max-width: 1280px;
-    }
+  .container {
+    max-width: 1280px;
   }
-  
-  /* xl */
-  @media (max-width: 1280px) {
-    .container {
-      max-width: 1024px;
-    }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
   }
-  
-  /* lg */
-  @media (max-width: 1024px) {
-    .container {
-      max-width: 768px;
-    }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
   }
-  
-  /* md */
-  @media (max-width: 768px) {
-    .container {
-      max-width: 640px;
-    }
+}
 
-    #mIcon {
-        display: block;
-    }
-
-    .nav_links{
-        flex-direction: column;
-        align-items: center;
-        position: absolute;        
-        top: 100%;
-        width: 100%;
-        left: 0;
-        display: none;
-    }
-
-    .nav_links.navigate_active{
-        display: flex;
-    }
-
-    .nav_links a {
-        font-size: 1.5rem;
-        margin: 1rem 0;
-    } 
-
-    .logo{
-        color: white;
-        margin-right: auto;
-        font-size: 1rem;
-    }
-
-    .home_image{      
-      width: 15rem;
-      height: 20rem;
-      align-content: center;
-    }
-
-    .mainHead{
-      display: block;  
-    }
-    
-    .title1{
-      color: white;
-      margin-top: 2rem;
-      margin-left: 0.5rem;
-      font-weight: 400;
-      font-size: 2rem;
-      font-family: krona One,sans-serif;
-      line-height: 4rem;
-    }
-    
-    .subtitle{
-      font-size: 1rem;
-      letter-spacing: 0.3rem;
-      font-family: krona One,sans-serif;
-      color: yellow;
-    }
-
-    
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
   }
-  
-  /* sm */
-  @media (max-width: 640px) {
-    .container {
-      max-width: 475px;
-    }
+
+  #mIcon {
+    display: block;
   }
-  
-  /* xs */
-  @media (max-width: 475px) {
-    .container {
-      width: 100%;
-    }
+
+  .nav_links {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 0;
+    display: none;
   }
+
+  .nav_links.navigate_active {
+    display: flex;
+  }
+
+  .nav_links a {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .logo {
+    color: white;
+    margin-right: auto;
+    font-size: 1rem;
+  }
+
+  .home_image {
+    width: 15rem;
+    height: 20rem;
+    align-content: center;
+  }
+
+  .mainHead {
+    display: block;
+  }
+
+  .title1 {
+    color: white;
+    margin-top: 2rem;
+    margin-left: 0.5rem;
+    font-weight: 400;
+    font-size: 2rem;
+    font-family: krona One, sans-serif;
+    line-height: 4rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    font-family: krona One, sans-serif;
+    color: yellow;
+  }
+
+
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+}
