@@ -42,21 +42,28 @@ let cusLoginArr = [
         password: "456"
     }
 ];
+console.log(cusLoginArr);
 
 
 function signIn() {
     let userName = document.getElementById("userName").value;
     let password = document.getElementById("pass").value;
 
-    for (let i = 0; i < cusLoginArr.length; i++) {
-        if((userName==cusLoginArr[i].userName) && (password==cusLoginArr[i].password)){
-            alert("log sucess")
-        }else{
-            alert("You dont have a account..please login")
-            console.log("wetenawa");
-            
-        }
+    let isExist = false;
 
+    for (let i = 0; i < cusLoginArr.length; i++) {
+        if(userName==cusLoginArr[i].userName && password==cusLoginArr[i].password){
+            alert('ok') 
+            isExist=true;          
+        }
+    }
+    if(!isExist){        
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "You Don't have an acoount...Please Register"
+            // footer: '<a href="#">Why do I have this issue?</a>'
+          });
     }
 }
 
