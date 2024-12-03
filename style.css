@@ -8,7 +8,7 @@
 }
 
 body{
-    background-color: #1D1E1A;
+    background-color: #1D1E1A;    
 }
 
 .container {
@@ -132,23 +132,23 @@ header{
   color: yellow;
 }
 
-.btnOrder{
-    background-color: #16B916;
-    color: white;
-    font-weight: 800;    
-    /* margin-left: 1rem; */
+/* .btnOrder{    
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 1rem;
     cursor: pointer;
-    transition: all 0.2s ease-in;
-    /* margin-left:35rem;     */
+    transition: all 0.2s ease-in;    
 }
 
 .btnOrder:hover{
   background-color: black;    
   color: white;
-}
+} */
+
+
+
+
+
 
 
 

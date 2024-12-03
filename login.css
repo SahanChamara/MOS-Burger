@@ -1,0 +1,133 @@
+/* login page */
+body {
+  background-image: url('Images/login\ form\ image.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  /* justify-content: center; */
+  align-items: center;
+  padding-left: 10rem;
+
+}
+
+
+.loginbox {
+  top: 5rem;
+  width: 25rem;
+  background: transparent;
+  border: 0.125rem solid white;
+  color: white;
+  backdrop-filter: blur(20px);
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem black;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.loginbox h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.loginbox .input-box {
+  position: relative;
+  width: 100%;
+  height: 3rem;
+  margin: 1rem 0;  
+}
+
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  /* border: none; */
+  outline: none;
+  border: 0.125rem white;
+  border-radius: 3rem;
+  font-size: 1rem;
+  color: white;
+  padding: 1.25rem 2.8rem 1.25rem 1.25rem;
+}
+
+.input-box input::placeholder {
+  color: white;
+}
+
+.input-box i {
+  position: absolute;
+  right: 1.25rem;
+  top: 100%;
+  transform: translateY(-50%);
+  font-size: 1.25rem;
+}
+
+.forget a {
+  color: white;
+  text-decoration: none;
+  margin-left: 16rem;
+  ;
+}
+
+.forget a:hover {
+  text-decoration: underline;
+}
+
+.btnSignin {
+  background-color: #27B0CF;
+  color: white;
+  font-weight: 800;
+  margin-left: 9.5rem;
+  padding: 0.5rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.btnSignin:hover {
+  background-color: black;
+  color: white;
+}
+
+.register-link .continue{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.register-link{
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.btnJoin {
+  background-color: #16B916;
+  color: white;
+  font-weight: 800;
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.btnJoin:hover {
+  background-color: black;
+  color: white;
+}
+
+.googleImage {
+  width: 2rem;
+  padding-left: 2rem;
+
+}
