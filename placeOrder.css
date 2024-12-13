@@ -70,7 +70,7 @@ body {
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  
+
 }
 
 /* ============
@@ -324,7 +324,7 @@ select {
   transition: width .35s cubic-bezier(var(--transition-main), 1);
   overflow-y: auto;
   overflow-x: hidden;
-  z-index: 2;    
+  z-index: 10;
 }
 
 #navbar:hover {
@@ -543,7 +543,7 @@ body {
   font-family: Arial, sans-serif;
   /* background-color: #1a1a2e; */
   color: #fff;
-  
+
 }
 
 /* Navbar Styles */
@@ -554,7 +554,7 @@ body {
   padding: 15px 150px;
   background-color: #252531;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  
+
 }
 
 /* Left Section */
@@ -579,6 +579,7 @@ body {
   flex-grow: 1;
   display: flex;
   justify-content: center;
+
 }
 
 .search-box {
@@ -607,12 +608,10 @@ body {
 
 
 
-
-
 /* card */
 .wraper {
   display: flex;
-  margin-left: 5rem
+  /* margin-left: 5rem */
   /* justify-content: start;
   width: 75%;
   float: left; */
@@ -627,13 +626,20 @@ body {
   /* margin-left: 5rem;
   flex: 200%;
   width: 80%; */
+
+  /* margin: 1rem; */
+  margin-top: 1rem;
+
+  margin-left: 5rem;
   flex-basis: 110rem;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+
+
 }
 
-.cart {
+.ordersCart {
   /* display: flex;
   flex: 20%; */
   /* background-color: #161616; */
@@ -642,196 +648,244 @@ body {
   /* width: 20%;
   max-width: 700px;
   min-width: 600px; */
-  width: 30%;  
-  
+  width: 25%;
   min-height: 62rem;
 }
 
-h1 {
-  font-family: 'Josefin Sans', serif;
-  font-size: 1.5rem;
-  line-height: 1.7rem;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-
-  /* // Color change on hover for split card */
-  .split:hover & {
-    color: #161616;
-  }
-
-}
-
-p {
-  font-size: 2rem;
-  line-height: 1.7rem;
-  letter-spacing: 0.5px;
-
-  /* // Color change on hover for split card */
-  .split:hover & {
-    color: #161616;
-  }
-
-}
-
-/* // The main container */
-
-/* // The cards */
-.card {
-  width: 360px;
-  box-shadow: 0 0 16px 0 rgba(0, 0, 0, 0.32);
-  cursor: pointer;
+/* new card adder */
+.newCard {
+  --bg-card: #27272a;
+  --primary: #6d28d9;
+  --primary-800: #4c1d95;
+  --primary-shadow: #2e1065;
+  --light: #d9d9d9;
+  --zinc-800: #18181b;
+  --bg-linear: linear-gradient(0deg, var(--primary) 50%, var(--light) 125%);
+  height: 15rem;
   position: relative;
-  transform-origin: center;
-  /* // easeOutQuart */
-  transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-  margin: 0 16px 0 0;
-
-  &:last-child {
-    margin: 0;
-  }
-
-  &:hover {
-    transform: scale(1.05);
-  }
-
-  .content {
-    padding: 40px 24px 48px 24px;
-    position: relative;
-
-    h1,
-    p {
-      /* // easeInOutSine */
-      transition: all 400ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
-
-      &.copy {
-        margin: 16px 0 0 0;
-      }
-
-    }
-
-  }
-
-  /* // Split card styling */
-  &.split {
-    height: 480px;
-    background: rgba(22, 22, 22, 0.8);
-
-    &:before {
-      content: '';
-      width: 100%;
-      height: 0;
-      background: #f3f3f3;
-      position: absolute;
-      bottom: 0;
-      transform-origin: bottom;
-      /* // easeOutQuart */
-      transition: all 250ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    /* // Hover state for the split card */
-    &:hover {
-
-      &:before {
-        height: 277px;
-      }
-
-    }
-
-    .image {
-      display: block;
-      position: relative;
-
-      img {
-        width: 100%;
-        height: auto;
-      }
-
-    }
-
-  }
-
-  &.full {
-    height: 480px;
-    background: #161616;
-    overflow: hidden;
-
-    .content {
-      position: absolute;
-      z-index: 1;
-      bottom: 40px;
-      padding: 0 24px;
-      /* // easeOutQuart */
-      transition: all 400ms cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    /* // Hover state for the full card */
-    &:hover {
-
-      .content {
-        bottom: 56px;
-      }
-
-    }
-
-    .image {
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-
-      img {
-        height: 480px;
-        width: auto;
-      }
-
-      &:before {
-        content: '';
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-        position: absolute;
-      }
-
-    }
-
-  }
-
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem;
+  /* width: 14rem; */
+  background-color: var(--bg-card);
+  border-radius: 1rem;
+  margin-bottom: 1rem;
 }
 
-.cards {
-  margin-left: 1rem;
-  margin-top: 1rem;
+.image_container {
+  overflow: hidden;
+  cursor: pointer;
+
+  position: relative;
+  z-index: 5;
+
+  width: 100%;
+  height: 8rem;
+  background-color: var(--primary-800);
+
+  border-radius: 0.5rem;
 }
+
+.image_container .image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 20rem;
+  fill: var(--light);
+}
+
+.newTitle {
+  overflow: clip;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--light);
+  text-transform: capitalize;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
+}
+
+.size {
+  font-size: 0.75rem;
+  color: var(--light);
+}
+
+.list-size {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  margin-top: 0.25rem;
+}
+
+.list-size .item-list {
+  list-style: none;
+}
+
+.list-size .item-list-button {
+  cursor: pointer;
+
+  padding: 0.5rem;
+  background-color: var(--zinc-800);
+
+  font-size: 0.75rem;
+  color: var(--light);
+
+  border: 2px solid var(--zinc-800);
+  border-radius: 0.25rem;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.item-list-button:hover {
+  border: 2px solid var(--light);
+}
+
+.item-list-button:focus {
+  background-color: var(--primary);
+
+  border: 2px solid var(--primary-shadow);
+
+  box-shadow: inset 0px 1px 4px var(--primary-shadow);
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--light);
+}
+
+/* From Uiverse.io by vinodjangid07 */
+.cartBtn {
+  width: 200px;
+  height: 50px;
+  border: none;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.cart {
+  z-index: 2;
+}
+
+.cartBtn:active {
+  transform: scale(0.96);
+}
+
+.product {
+  position: absolute;
+  width: 12px;
+  border-radius: 3px;
+  content: "";
+  left: 23px;
+  bottom: 23px;
+  opacity: 0;
+  z-index: 1;
+  fill: rgb(211, 211, 211);
+}
+
+.cartBtn:hover .product {
+  animation: slide-in-top 1.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-30px);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) rotate(-90deg);
+    opacity: 1;
+  }
+}
+
+.cartBtn:hover .cart {
+  animation: slide-in-left 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .orderTopic {
   margin-top: 2rem;
   margin-left: 2rem;
 }
 
-.box1{
+.box1 {
   color: black;
   background: white;
   margin: 1rem;
-  width:35rem;
-  height: 20rem;
+  width: 30rem;
+  height: 15rem;
   border-radius: 1rem;
 }
 
-.OrderTitle{
+.cartTopic {
   text-align: center;
-  padding: 1rem;
-  
+  padding-top: 1rem;
+  font-size: 1rem;
+
 }
 
 
-/* cart adding  cards */ 
 
-.addedCart{
+
+
+
+
+
+
+/* cart adding  cards */
+
+.addedCart {
   text-align: center;
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 4rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 .cartCard {
@@ -845,7 +899,7 @@ p {
   background: linear-gradient(to right top, #3f4c6b, #606c88);
   padding: 1rem;
   color: rgb(107, 114, 128);
-  box-shadow: 0px 87px 78px -39px rgba(0,0,0,0.4);
+  box-shadow: 0px 87px 78px -39px rgba(0, 0, 0, 0.4);
 }
 
 .icon {
@@ -855,13 +909,13 @@ p {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: 1rem;
   background-color: #153586;
   color: rgb(59, 130, 246);
 }
 
-.cartImg{
-  width: 5rem;
+.cartImg {
+  width: 3rem;
 }
 
 .icon svg {
@@ -892,11 +946,10 @@ p {
   color: rgb(202, 200, 200);
 }
 
-.actions {
-  
-}
+.actions {}
 
-.download, .prise {
+.download,
+.prise {
   width: 100%;
   display: inline-flex;
   justify-content: center;
