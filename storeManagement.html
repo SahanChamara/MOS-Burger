@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOS Burger Store Management</title>
+    <link rel="stylesheet" href="storeManagement.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <h1>MOS Burger Store Management</h1>
+            <div class="navigation">
+                <button class="nav-btn" onclick="showSection('add-item')">Add Item</button>
+                <button class="nav-btn" onclick="showSection('search-item')">Search Item</button>
+                <button class="nav-btn" onclick="showSection('manage-items')">Manage Items</button>
+            </div>
+        </header>
+
+        <!-- Add Item Section -->
+        <section id="add-item" class="section active">
+            <h2>Add New Burger</h2>
+            <form id="addItemForm" class="form">
+                <input type="text" placeholder="Item Name" required id="itemName">
+                <input type="number" placeholder="Price (RS)" required id="price">
+                <input type="number" placeholder="Quantity" required id="quantity">
+                <input type="file" accept="image/*" required id="image">
+                <!-- <button type="submit" class="btn">Add Burger</button> -->
+            </form>
+            <button type="submit" class="btn" onclick="addItems()">Add Items</button>
+
+            <!-- press add Button after adding the card -->
+            <div class="card">
+                <p class="heading">
+                    Popular this month
+                </p>
+                <p>
+                    Powered By
+                </p>
+                <p>Uiverse
+                </p>
+            </div>           
+        </section>
+
+        <!-- Search Item Section -->
+        <section id="search-item" class="section">
+            <h2>Search Items</h2>
+            <input type="text" placeholder="Search by name..." class="search-bar">
+        </section>
+
+        <!-- Manage Items Section -->
+        <section id="manage-items" class="section">
+            <h2>Manage Burgers</h2>
+            <div class="item-grid">
+                <!-- Dynamically populated burger items -->
+                <div class="item-card">
+                    <img src="https://via.placeholder.com/150" alt="Burger">
+                    <h3>Classic Burger</h3>
+                    <p>Price: RS. 200</p>
+                    <p>Quantity: 5</p>
+                    <div class="actions">
+                        <button class="update">Update</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+        }
+    </script>
+    <script src="storeManagement.js"></script>
+</body>
+
+</html>
