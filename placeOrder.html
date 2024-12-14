@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Place Order</title>
     <link rel="stylesheet" href="placeOrder.css">
-    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+    <!-- <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css"> -->
 </head>
 
 <body>
@@ -114,7 +114,10 @@
             </div> -->
         </div>
 
-        <div class="ordersCart" id="cartAdding">
+        <div class="ordersCart">
+            <div id="cartAdding">
+
+            </div>
             <!-- <div class="orderTopic">
                 <div class="box1">
                     <div class="cartTopic">
@@ -149,8 +152,16 @@
             </div> -->
             <div class="bill-summary">
                 <div class="total-price">
-                    <h3>Total Price: <span id="total-price">RS.0</span></h3>
-                    <h3>Total Price: <span id="total-price">RS.0</span></h3>
+                    <h3>Total Price: <span id="totalPrice">RS.0</span></h3>
+
+                    <div class="totalPriceContaiiner">
+                        <div class="totalPriceinputBox">
+                            <input type="text" required="required" oninput="calculatingChange()" id="cash">
+                            <span class="user">Enter Cash</span>
+                        </div>
+                        <!-- <button class="enter">Enter</button> -->
+                    </div>
+                    <h3>Change: <span id="change">RS.0</span></h3>
                 </div>
                 <button id="print-bill-btn" onclick="printBill()">Print Bill</button>
             </div>
@@ -164,6 +175,8 @@
     </div>
 
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>    
     <script src="script.js"></script>
     <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

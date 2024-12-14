@@ -785,7 +785,7 @@ function loadItems(clickSection) {
                     <div class="price">
                         <span>RS.${items.price}</span>
                     </div>                    
-                    <button class="cartBtn" onclick="enterQty('${items.itemCode}')">
+                    <button class="cartBtn" onclick="addCart('${items.itemCode}')">
                         <svg class="cart" fill="white" viewBox="0 0 576 512" height="1em"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -810,55 +810,63 @@ function loadItems(clickSection) {
 // cart array
 let cartArr = [];
 
-// Cart adding function
-function enterQty(code) {
-    Swal.fire({
-        title: "Enter Quantity",
-        input: "text",
-        showCancelButton: true, // Optional: Adds a cancel button
-        confirmButtonText: "OK", // Optional: Customizes the OK button text
-    }).then((result) => {
-        if (result.isConfirmed) {
-            let qty = result.value
+// total price
 
-            // Call your custom function here
-            addCart(qty,code);
-        } else {
-            console.log("Action was cancelled or dismissed.");
+
+let cartAdding = document.getElementById("cartAdding");
+let totalPriceSet = document.getElementById("totalPrice");
+
+function addCart(code) {
+    for (let i = 0; i < clickSectionArr.length; i++) {
+        if (code == clickSectionArr[i].itemCode) {
+            let isExist = false;
+
+            for (let j = 0; j < cartArr.length; j++) {
+                if (cartArr[j].itemCode == code) {
+                    cartArr[j].quantity++
+                    isExist = true;
+                    break;
+                }
+            }
+
+            if (!isExist) {
+                cartArr.push({
+                    itemCode: clickSectionArr[i].itemCode,
+                    itemNAme: clickSectionArr[i].itemNAme,
+                    price: clickSectionArr[i].price,
+                    discount: clickSectionArr[i].discount,
+                    image: clickSectionArr[i].image,
+                    quantity: 1,
+                });
+            }
+            break;
         }
-    });
-
-    // // Define your custom function
-    // function handleOkButtonClick(quantity) {
-    //     alert("You entered: " + quantity);
-    //     // Add additional logic here as needed
-    // }
+    }
+    setTheOrderCards();
 }
 
-function addCart(qty,code) {
-    let cartAdding = document.getElementById("cartAdding");
-    let addArray = "";
-
-    for (let i = 0; i < clickSectionArr.length; i++) {
-        let totalPrice = qty * clickSectionArr[i].price;
-
-        if (code == clickSectionArr[i].itemCode) {
-            addArray = ` <div class="addedCart">
+let setPrice=0;
+function setTheOrderCards() {
+    let body = "";
+    let totalPrice = 0;
+    
+    cartArr.forEach(item => {
+        totalPrice += item.quantity * item.price;
+        body += `<div class="addedCart">
                         <div class="cartCard">
                             <div class="icon">
-                            <img class="cartImg" src="${clickSectionArr[i].image}" alt="">
-                                
+                            <img class="cartImg" src="${item.image}" alt="">
                             </div>
                             <div class="content">
-                                <span class="cartTitle">${clickSectionArr[i].itemNAme}</span>                                                                      
+                                <span class="cartTitle">${item.itemNAme}</span>                                                                      
                                 <div class="actions">
                                     <div>
-                                        <h4 class="prise">RS.${clickSectionArr[i].price } <p> x ${qty}</p></h4>
-                                        <h5 class="prise">Total Price - RS.${totalPrice}</h5>
+                                        <h4 class="prise">RS.${item.price}</h4>
+                                        <h6 class="prise">Qty : ${item.quantity}</h6>
                                     </div>
                                 </div>
                             </div>
-                            <button type="button" class="close">
+                            <button type="button" class="close" onclick="removeOrder('${item.itemCode}')">
                                 <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -867,10 +875,108 @@ function addCart(qty,code) {
                                 </svg>
                             </button>
                         </div>
-                    </div> `
+                    </div>`
+    });
+    cartAdding.innerHTML = body;
+    totalPriceSet.innerHTML = totalPrice;
+    setPrice=totalPrice;
+}
 
+function removeOrder(itemCode) {
+    cartArr = cartArr.filter(item => item.itemCode !== itemCode);
+    setTheOrderCards();    
+}
+
+function calculatingChange() {    
+    let cash = document.getElementById("cash").value;
+    let change = document.getElementById("change")
+
+    let changeAmount = cash - setPrice;
+    change.innerHTML = changeAmount;
+}
+
+function printBill() {
+    let items = cartArr.map((element) =>  
+        `<tr><td>${element.itemNAme || "Unknown Item"}</td><td class="ps-2">${element.quantity || 0}</td></tr> `
+    ).join("");
+
+    const swalWithBootstrapButtons = Swal.mixin({
+        customClass: {
+            confirmButton: "btn btn-success",
+            cancelButton: "btn btn-primary"
+        },
+        buttonsStyling: false
+    });
+
+    swalWithBootstrapButtons.fire({
+        title: "Order Placed..!",
+        html: `
+            <div style="text-align: left; font-family: Arial, sans-serif;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr style="border-bottom: 1px solid #ddd;">
+                            <th style="text-align: left; padding: 5px;">Item</th>
+                            <th style="text-align: left; padding: 5px;">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${items || "<tr><td colspan='2'>No items added</td></tr>"}
+                    </tbody>
+                </table>
+                <br>
+                <p style="margin-top: 10px;"><strong>Total Amount:</strong> Rs. ${setPrice.toFixed(2)}.00</p>
+                <p><strong>Discount:</strong> 0%</p>
+                <p><strong>Final Amount:</strong> Rs. ${setPrice.toFixed(2)}.00</p>
+            </div>
+        `,
+        showCancelButton: true,
+        confirmButtonText: "Print Bill",
+        cancelButtonText: "Cancel",
+        reverseButtons: true
+    }).then((result) => {
+        if (result.isConfirmed) {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.setFont("helvetica");
+
+            // Header Section
+            doc.setFontSize(18);
+            doc.text("MOS BURGERS", 105, 20, null, null, "center");
+            doc.setFontSize(12);
+            doc.text("INVOICE", 105, 30, null, null, "center");
+
+            // Customer Info
+            let yPosition = 40;
+            doc.text(`Date: ${new Date().toLocaleDateString()}`, 10, yPosition);
+            yPosition += 10;
+
+            // Table Header
+            doc.setFontSize(12);
+            doc.text("Item", 10, yPosition);
+            doc.text("Qty", 140, yPosition);
+            yPosition += 10;
+
+            // Table Body
+            cartArr.forEach((item) => {
+                doc.text(item.itemNAme, 10, yPosition);
+                doc.text(`${item.quantity}`, 140, yPosition, null, null, "right");
+                yPosition += 10;
+            });
+
+            // Total and Final Amount
+            yPosition += 10;
+            doc.text(`Total Amount: Rs. ${setPrice.toFixed(2)}`, 10, yPosition);
+            yPosition += 5;
+            doc.text(`Final Amount: Rs. ${setPrice.toFixed(2)}`, 10, yPosition);
+
+            // Footer Message
+            yPosition += 20;
+            doc.setFontSize(10);
+            doc.text("Thank you for your purchase!", 105, yPosition, null, null, "center");
+
+            // Save PDF
+            doc.save("Order_Bill.pdf");
         }
-    }
-    cartArr.push(addArray);
-    cartAdding.innerHTML += addArray;
+    });
 }
