@@ -1,239 +1,300 @@
 /* General Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Arial', sans-serif;
-    color: #eee;
-    background: #121212;
-  }
-  
-  .container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  /* Header Section */
-  .header {
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  .header h1 {
-    color: #ff6b6b;
-    margin-bottom: 20px;
-  }
-  
-  .navigation {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-  }
-  
-  .nav-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: #222;
-    color: #fff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: transform 0.3s ease, background 0.3s ease;
-  }
-  
-  .nav-btn:hover {
-    background: #ff6b6b;
-    transform: translateY(-3px);
-  }
-  
-  /* Sections */
-  .section {
-    display: none;
-    padding: 20px;
-    background: #1f1f1f;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    margin-bottom: 20px;    
-  }
-  
-  .section.active {
-    display: block;
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Forms */
-  .form input, .form button, .search-bar {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background: #222;
-    color: #fff;
-  }
-  
-  .btn {
-    background: #ff6b6b;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #333;
-    border-radius: 5px;
-    background: #222;
-    color: #fff;
-    
-  }
-  
-  .btn:hover {
-    background: #e05555;
-  }
-  
-  /* Manage Items Section */
-  .item-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
-  
-  .item-card {
-    background: #222;
-    border-radius: 8px;
-    text-align: center;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .item-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
-  }
-  
-  .item-card img {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
-  .item-card h3 {
-    margin: 15px 0 5px;
-    color: #ff6b6b;
-  }
-  
-  .item-card p {
-    color: #ccc;
-  }
-  
-  .actions button {
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .update {
-    background: #007bff;
-    color: #fff;
-  }
-  
-  .delete {
-    background: #dc3545;
-    color: #fff;
-  }
-  
-  .update:hover {
-    background: #0056b3;
-  }
-  
-  .delete:hover {
-    background: #c82333;
-  }
-  
+body {
+  font-family: 'Arial', sans-serif;
+  color: #eee;
+  background: #121212;
+}
 
-  /* press add Button after adding the card */
-  /* From Uiverse.io by Pravins01 */ 
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  color: #ff6b6b;
+  margin-bottom: 20px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: #ff6b6b;
+  transform: translateY(-3px);
+}
+
+/* Sections */
+.section {
+  display: none;
+  padding: 20px;
+  background: #1f1f1f;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 20px;
+}
+
+.section.active {
+  display: block;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Forms */
+.form input,
+.form button,
+.search-bar {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+}
+
+.btn {
+  background: #ff6b6b;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background: #222;
+  color: #fff;
+
+}
+
+.btn:hover {
+  background: #e05555;
+}
+
+/* Manage Items Section */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.item-card {
+  background: #222;
+  border-radius: 8px;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.8);
+}
+
+.item-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.item-card h3 {
+  margin: 15px 0 5px;
+  color: #ff6b6b;
+}
+
+.item-card p {
+  color: #ccc;
+}
+
+.actions button {
+  padding: 10px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.update {
+  background: #007bff;
+  color: #fff;
+}
+
+.delete {
+  background: #dc3545;
+  color: #fff;
+}
+
+.update:hover {
+  background: #0056b3;
+}
+
+.delete:hover {
+  background: #c82333;
+}
+
+
+/* press add Button after adding the card */
+.addingCard{
+  display: flex;
+  margin: 2rem;
+  gap: 1rem;
+  grid-template-columns: auto;
+}
+
 .card {
-    margin-top: 3rem;
-    position: absolute;
-    width: 190px;
-    height: 254px;
-    background-color: #000;
-    display: flex;
-    flex-direction: column;
-    justify-content: end;
-    padding: 12px;
-    gap: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    color: white;    
-    
-  }
-  
-  .card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    left: -5px;
-    margin: auto;
-    width: 200px;
-    height: 264px;
-    border-radius: 10px;
-    background: linear-gradient(-45deg, #e81cff 0%, #40c9ff 100% );
-    z-index: -10;
-    pointer-events: none;
-    transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  }
-  
-  .card::after {
-    content: "";
-    z-index: -10;
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(-45deg, #fc00ff 0%, #00dbde 100% );
-    transform: translate3d(0, 0, 0) scale(0.95);
-    filter: blur(20px);
-  }
-  
-  .heading {
-    font-size: 20px;
-    text-transform: capitalize;
-    font-weight: 700;
-  }
-  
-  .card p:not(.heading) {
-    font-size: 14px;
-  }
-  
-  .card p:last-child {
-    color: #e81cff;
-    font-weight: 600;
-  }
-  
-  .card:hover::after {
-    filter: blur(30px);
-  }
-  
-  .card:hover::before {
-    transform: rotate(-90deg) scaleX(1.34) scaleY(0.77);
-  }
-  
-  
+  width: 190px;
+  height: 254px;
+  padding: .8em;
+  background: #ffffff;
+  position: relative;
+  overflow: visible;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+ }
+ 
+ .card-img img {
+  background-color: #ffcaa6;
+  width: 10rem;
+  border-radius: .5rem;
+  transition: .3s ease;
+ }
+ 
+ .card-info {
+  padding-top: 10%;
+  color: black;
+ }
+ 
+ svg {
+  width: 20px;
+  height: 20px;
+ }
+ 
+ .card-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid #130b0b;
+ }
+ 
+ /*Text*/
+ .text-title {
+  font-weight: 900;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: black;
+ }
+ 
+ .text-body {
+  font-size: .9em;
+  padding-bottom: 10px;
+ }
+ 
+ /*Button*/
+ .card-button {
+  border: 1px solid #252525;
+  display: flex;
+  padding: .3em;
+  cursor: pointer;
+  border-radius: 50px;
+  transition: .3s ease-in-out;
+ }
+ 
+ /*Hover*/
+ .card-img img:hover {
+  transform: translateY(-25%);
+  box-shadow: rgba(226, 196, 63, 0.25) 0px 13px 47px -5px, rgba(180, 71, 71, 0.3) 0px 8px 16px -8px;
+ }
+ 
+ .card-button:hover {
+  border: 1px solid #ffcaa6;
+  background-color: #ffcaa6;
+ }
+ 
+
+ /* Searching Part Card */ 
+.cardSearch {
+  padding: 20px;
+  width: 250px;
+  min-height: 300px;
+  border-radius: 20px;
+  background: #e8e8e8;
+  box-shadow: 5px 5px 6px #dadada,
+               -5px -5px 6px #f6f6f6;
+  transition: 0.4s;
+}
+
+.cardSearch:hover {
+  translate: 0 -10px;
+}
+
+.card-titleSearch {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2e54a7;
+  margin: 15px 0 0 10px;
+}
+
+.card-imageSearch {
+  min-height: 170px;
+  background-color: #c9c9c9;
+  border-radius: 15px;
+  box-shadow: inset 8px 8px 10px #c3c3c3,
+            inset -8px -8px 10px #cfcfcf;
+}
+
+.card-bodySearch {
+  margin: 13px 0 0 10px;
+  color: rgb(31, 31, 31);
+  font-size: 15px;
+}
+
+.footerSearch {
+  float: right;
+  margin: 28px 0 0 18px;
+  font-size: 13px;
+  color: #636363;
+}
+
+.by-name {
+  font-weight: 700;
+}
