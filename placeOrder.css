@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans|Roboto');
 
 
+
 :root {
   --primary: 237, 94%, 81%;
   --background: 266, 16%, 92%;
@@ -610,23 +611,12 @@ body {
 
 /* card */
 .wraper {
-  display: flex;
-  /* margin-left: 5rem */
-  /* justify-content: start;
-  width: 75%;
-  float: left; */
+  display: flex;  
+  overflow-y: auto;
 
 }
 
 .cardDiv {
-  /* display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px; */
-  /* max-width: 1200px; */
-  /* margin-left: 5rem;
-  flex: 200%;
-  width: 80%; */
-
   /* margin: 1rem; */
   margin-top: 1rem;
 
@@ -648,8 +638,8 @@ body {
   /* width: 20%;
   max-width: 700px;
   min-width: 600px; */
-  width: 25%;
-  min-height: 62rem;  
+  width: 45%;
+  min-height: 62rem;    
 }
 
 /* new card adder */
@@ -667,10 +657,11 @@ body {
   flex-direction: column;
   gap: 0.75rem;
   padding: 1rem;
-  /* width: 14rem; */
+  width: 14rem;
   background-color: var(--bg-card);
   border-radius: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1rem;  
+  
 }
 
 .image_container {
@@ -700,7 +691,7 @@ body {
 .newTitle {
   overflow: clip;
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;  
   font-weight: 600;
   color: var(--light);
   text-transform: capitalize;
@@ -759,15 +750,15 @@ body {
 }
 
 .price {
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 700;
   color: var(--light);
 }
 
 /* From Uiverse.io by vinodjangid07 */
 .cartBtn {
-  width: 200px;
-  height: 50px;
+  width: 150px;
+  height: 30px;
   border: none;
   border-radius: 20px;
   display: flex;
@@ -775,7 +766,8 @@ body {
   justify-content: center;
   gap: 7px;
   color: white;
-  font-weight: 500;
+  font-weight: 200;
+  font-size: 0.6rem;
   position: relative;
   background-color: rgb(0, 0, 0);
   box-shadow: 0 20px 30px -7px rgba(27, 27, 27, 0.219);
@@ -837,18 +829,7 @@ body {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-.orderTopic {
+/* .orderTopic {
   margin-top: 2rem;
   margin-left: 2rem;
 }
@@ -867,15 +848,7 @@ body {
   padding-top: 1rem;
   font-size: 1rem;
 
-}
-
-
-
-
-
-
-
-
+} */
 
 /* cart adding  cards */
 
@@ -887,10 +860,12 @@ body {
   margin-left: 1rem;
   margin-right: 1rem;
   
+  
 }
 
 .cartCard {
-  max-width: 400px;
+  max-width: 300px;
+  /* height: 9rem; */
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -960,7 +935,7 @@ body {
   border-radius: 0.5rem;
   padding: 0.375rem 0.5rem;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1rem;
   color: rgb(255, 255, 255);
   outline: 2px solid transparent;
@@ -1013,8 +988,8 @@ body {
 
 .bill-summary {
   background-color: #ffffff;
-  padding: 2rem;
-  margin: 2rem;
+  padding: 1rem;
+  margin: 1rem;
   margin-top: 2%;
   border-radius: 8px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
@@ -1022,12 +997,13 @@ body {
   position: absolute;
   bottom: 0;
   right: 0; 
-  width: 30rem; 
+  width: 18rem;
+  height: 12rem;   
 }
 
 .bill-summary .total-price h3 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: bold;
   color: #333;
 }
@@ -1077,9 +1053,9 @@ body {
 } */
 
 .totalPriceinputBox {
-  margin: 2rem;
+  margin: 1rem;
   position: relative;
-  width: 250px;
+  width: 200px;
 }
 
 .totalPriceinputBox input {
@@ -1088,7 +1064,7 @@ body {
   outline: none;
   border: none;
   color: #000;
-  font-size: 1em;
+  font-size: 1rem;
   background: transparent;
   border-left: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -1104,7 +1080,7 @@ body {
   margin-left: 10px;
   padding: 10px;
   pointer-events: none;
-  font-size: 12px;
+  font-size: 10px;
   color: #000;
   text-transform: uppercase;
   transition: 0.5s;
@@ -1129,9 +1105,9 @@ body {
   border-radius: 8px;
 }
 
-.enter {
+/* .enter {
   height: 45px;
-  width: 100px;
+  width: 80px;
   border-radius: 5px;
   border: 2px solid #000;
   cursor: pointer;
@@ -1146,5 +1122,5 @@ body {
 .enter:hover {
   background-color: rgb(0, 0, 0);
   color: white;
-}
+} */
 
