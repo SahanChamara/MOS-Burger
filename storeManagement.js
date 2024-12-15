@@ -490,7 +490,7 @@ function loadItemsToUpdate() {
                     <p>Quantity: ${items.quantity}</p>
                     <div class="actions">
                         <button class="update" onclick="updateItems('${items.itemCode}')">Update</button>
-                        <button class="delete">Delete</button>
+                        <button class="delete" onclick="deleteItem('${items.itemCode}')">Delete</button>
                     </div>
                 </div>`
     });
@@ -543,16 +543,48 @@ async function updateItems(itemCode) {
                     icon: 'success',
                     confirmButtonText: 'OK',
                     preConfirm: () => {
-                        itemArr[i].price=formValues.price;
-                        itemArr[i].quantity=formValues.quantity;
+                        itemArr[i].price = formValues.price;
+                        itemArr[i].quantity = formValues.quantity;
 
                         loadItemsToUpdate();
-                        
+
                         return true; // Required for the SweetAlert to close after the custom work
                     },
                 });
             }
-            
+
         }
     }
+}
+
+
+function deleteItem(itemCode) {
+
+    for (let i = 0; i < itemArr.length; i++) {
+        if (itemArr[i].itemCode == itemCode) {
+            Swal.fire({
+                title: itemArr[i].itemNAme,
+                text: "Are you sure? You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+
+                    // removing the array element
+                    itemArr.splice(i,1);
+                    loadItemsToUpdate();
+
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Your file has been deleted.",
+                        icon: "success"
+                    });
+                }
+            });
+        }
+    }
+    
 }
