@@ -574,7 +574,7 @@ function deleteItem(itemCode) {
                 if (result.isConfirmed) {
 
                     // removing the array element
-                    itemArr.splice(i,1);
+                    itemArr.splice(i, 1);
                     loadItemsToUpdate();
 
                     Swal.fire({
@@ -586,5 +586,5 @@ function deleteItem(itemCode) {
             });
         }
     }
-    
+
 }

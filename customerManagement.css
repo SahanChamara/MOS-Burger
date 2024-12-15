@@ -1,0 +1,106 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1d1d1d;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  header {
+    width: 100%;
+    background: #ff5c5c;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  .nav-btn {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .nav-btn:hover {
+    background-color: #ffca28;
+  }
+  
+  .main-section {
+    padding: 2rem;
+    width: 80%;
+  }
+  
+  .main-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #ffca28;
+  }
+  
+  .customer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .customer-card {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .customer-info p {
+    margin: 0.5rem 0;
+    color: #ddd;
+  }
+  
+  .customer-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+  
+  .customer-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+  
+  .edit-btn,
+  .delete-btn {
+    background-color: #ff5c5c;
+    border: none;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-btn:hover {
+    background-color: #ffca28;
+  }
+  
+  .delete-btn:hover {
+    background-color: #d33;
+  }
+  

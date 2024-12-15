@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="customerManagement.css">
+  <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
+  <title>MOS Burger Customer Management</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1>MOS Burger Customer Management</h1>
+    <nav>
+      <button class="nav-btn" onclick="addCustomer()">Add Customer</button>
+      <button class="nav-btn" onclick="searchCustomer()">Search Customer</button>
+    </nav>
+  </header>
+
+  <section class="main-section">
+    <h2>Customer List</h2>
+    <div class="customer-grid">
+      <!-- Example Customer Card -->
+      <div class="customer-card" id="customerDetails">
+        <!-- <div class="customer-info">
+          <p class="customer-name">John Doe</p>
+          <p class="customer-email">johndoe@example.com</p>
+          <p class="customer-phone">+1 234 567 890</p>
+        </div>
+        <div class="customer-actions">
+          <button class="edit-btn">Edit</button>
+          <button class="delete-btn">Delete</button>
+        </div> -->
+      </div>
+    </div>
+  </section>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="sweetalert2/dist/sweetalert2.min.js"></script>
+<script src="customerManagement.js"></script>
+
+</html>
