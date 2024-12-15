@@ -1,42 +1,56 @@
 //Item Adding Part
 let addItemArr = [];
-let setBody = "";
+
 
 function addItems() {
     let itemName = document.getElementById("itemName").value;
     let price = document.getElementById("price").value;
     let quantity = document.getElementById("quantity").value;
-    let image = document.getElementById("image");
+    let imageInput = document.getElementById("image");
 
-    let addItemCard = document.getElementById("addItemCard")
+    if (imageInput.files && imageInput.files[0]) {
+        let reader = new FileReader();
 
-    addItemArr.push({
-        itemName: itemName,
-        price: price,
-        quantity: quantity,
-        iamge: image
-    });
+        reader.onload = function (e) {
+            // Add the item to the array with the uploaded image as a base64 string
+            addItemArr.push({
+                itemName: itemName,
+                price: price,
+                quantity: quantity,
+                image: e.target.result, // Base64 image data
+            });
 
-    console.log(addItemArr);
+            // Update the UI
+            updatingCard();
+        };
 
+        reader.readAsDataURL(imageInput.files[0]); // Convert image to base64
+    } else {
+        alert("Please upload an image!");
+    }
+}
+
+
+function updatingCard() {
+    let addItemCard = document.getElementById("addItemCard");
+    let setBody = "";
 
     addItemArr.forEach(item => {
         setBody = `<div class="card">
-                    <div class="card-img">
-                        <img src="${item.image}" alt="">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title">${item.itemName}</p>
-                        
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">Rs.${item.price}</span>
-                    </div>
-                </div>`
+    <div class="card-img">
+        <img src="${item.image}" alt="${item.itemName}">
+    </div>
+    <div class="card-info">
+        <p class="text-title">${item.itemName}</p>
+        <span class="text-price">Rs.${item.price}</span>
+    </div>
+</div>`
     })
 
     addItemCard.innerHTML += setBody;
 }
+
+
 
 //searching part
 //IItem array
@@ -372,23 +386,66 @@ let itemArr = [
 
 function search() {
     let searchItem = document.getElementById("searchItem").value;
-    let setSearchItem = "";  
+    let setSearchItem = "";
     console.log(searchItem);
-    
+
 
     let searchCard = document.getElementById("searchCard")
 
-    for (let i = 0; i < itemArr.length; i++) {        
-        if (searchItem == itemArr[i].itemCode) {            
-            
-            setSearchItem += `<div class="cardSearch">
-                    <div class="card-imageSearch"></div>
-                    <p class="card-titleSearch">${itemArr[i].itemNAme}</p>
-                    <p class="card-bodySearch">
-                        Rs.${itemArr[i].price}
-                    </p>
-                </div>`
+    for (let i = 0; i < itemArr.length; i++) {
+        if (searchItem == itemArr[i].itemCode) {
+
+            // setSearchItem += `<div class="cardSearch">
+            //         <div class="card-imageSearch">
+            //             <img src="${itemArr[i].image}" alt="Burger">
+            //         </div>
+            //         <p class="card-titleSearch">${itemArr[i].itemNAme}</p>
+            //         <p class="card-bodySearch">
+            //             Rs.${itemArr[i].price}
+            //         </p>
+            //     </div>`
+
+            // Swal.fire({
+            //     title: itemArr[i].itemNAme,
+            //     text: itemArr[i].price,
+            //     imageUrl: itemArr[i].image,
+            //     imageWidth: 300,
+            //     imageHeight: 200,
+            //     imageAlt: "Custom image"
+            // });
+
+            Swal.fire({
+                title: `<strong style="font-size: 1.8rem; color: #333;">${itemArr[i].itemNAme}</strong>`,
+                html: `
+                    <div style="display: flex; flex-direction: column; align-items: center;">
+                        <img src="${itemArr[i].image}" 
+                             alt="Item Image" 
+                             style="width: 300px; height: 200px; border-radius: 8px; box-shadow: 0px 4px 10px rgba(0,0,0,0.2); margin-bottom: 1rem;" />
+                        <p style="font-size: 1.2rem; font-weight: bold; margin: 0; color: #555;">Price: Rs. ${itemArr[i].price}</p>
+                        <p style="font-size: 1rem; color: #777; margin-top: 0.5rem;">
+                            Available Now!
+                        </p>
+                    </div>
+                `,
+                showCloseButton: true,
+                showCancelButton: false,
+                confirmButtonText: 'OK',
+                confirmButtonColor: '#007aff',
+                background: '#f9f9f9',
+                backdrop: `
+                    rgba(0, 0, 0, 0.4)
+                    url("https://media.giphy.com/media/26gslrAo81D9fuRBe/giphy.gif")
+                    center center
+                    no-repeat
+                `,
+                customClass: {
+                    popup: 'custom-popup',
+                    title: 'custom-title',
+                    htmlContainer: 'custom-html'
+                }
+            });
+
         }
     }
-    searchCard.innerHTML+=setSearchItem;
+    // searchCard.innerHTML = setSearchItem;
 }

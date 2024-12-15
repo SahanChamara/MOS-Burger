@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MOS Burger Store Management</title>
     <link rel="stylesheet" href="storeManagement.css">
+    <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
 </head>
 
 <body>
@@ -27,45 +28,31 @@
                 <input type="text" placeholder="Item Name" required id="itemName">
                 <input type="number" placeholder="Price (RS)" required id="price">
                 <input type="number" placeholder="Quantity" required id="quantity">
-                <input type="file" accept="image/*" required id="image">
+                <input type="file" id="image" accept="image/*">
+                <!-- <input type="file" accept="image" required id="image/*"> -->
                 <!-- <button type="submit" class="btn">Add Burger</button> -->
             </form>
             <button type="submit" class="btn" onclick="addItems()">Add Items</button>
 
             <!-- press add Button after adding the card -->
             <div id="addItemCard" class="addingCard">
-                <!-- <div class="card">
-                    <div class="card-img">
-                        <img src="Images/Classic Burger image  - 1.jpg" alt="">
-                    </div>
-                    <div class="card-info">
-                        <p class="text-title">Product title </p>
-                        <p class="text-body">Product description and details</p>
-                    </div>
-                    <div class="card-footer">
-                        <span class="text-title">$499.49</span>
-                    </div>
-                </div> -->
-
+                <!-- this is adding card in js -->
             </div>
 
         </section>
 
         <!-- Search Item Section -->
         <section id="search-item" class="section">
-            <h2>Search Items</h2>
-            <input type="text" placeholder="Search by Item ID..." class="search-bar" id="searchItem"> <button onclick="search()">Search</button>
-            <div id="searchCard">
-                <!-- <div class="cardSearch">
-                    <div class="card-imageSearch"></div>
-                    <p class="card-titleSearch">Card title</p>
-                    <p class="card-bodySearch">
-                        Nullam ac tristique nulla, at convallis quam. Integer consectetur mi nec magna tristique, non
-                        lobortis.
-                    </p>
-                </div> -->
+            <h2 class="section-title">Search Items</h2>
+            <div class="search-container">
+                <input type="text" placeholder="Search by Item ID..." class="search-bar" id="searchItem">
+                <button class="search-button" onclick="search()">Search</button>
+            </div>
+            <div id="searchCard" class="searchItemsCard">
+                <!-- Cards will be dynamically added here -->
             </div>
         </section>
+
 
         <!-- Manage Items Section -->
         <section id="manage-items" class="section">
@@ -94,6 +81,9 @@
             document.getElementById(sectionId).classList.add('active');
         }
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
     <script src="storeManagement.js"></script>
 </body>
 
