@@ -398,7 +398,7 @@ strong {
   justify-content: center;
   align-items: center;  
   min-height: 100vh;
-  background: url('Images/Home Page background Image.jpg') no-repeat center center/cover;
+  background: url('../Images/Home\ Page\ background\ Image.jpg') no-repeat center center/cover;
   position: relative;
   border-radius: 1rem;
   padding: 2rem;
